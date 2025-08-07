@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depop Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Depop Bot</h1>
+            <div class="status">
+                <span id="status-indicator" class="status-offline">Offline</span>
+                <span id="stats">0 accounts • 0 URLs • 0 likes</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Accounts Section -->
+            <section class="card">
+                <h2>📧 Accounts</h2>
+                <form id="account-form">
+                    <input type="email" id="account-email" placeholder="Email" required>
+                    <input type="text" id="account-proxy" placeholder="Proxy (optional)">
+                    <button type="submit">Add Account</button>
+                </form>
+                <div id="accounts-list"></div>
+            </section>
+
+            <!-- URLs Section -->
+            <section class="card">
+                <h2>🔗 URLs</h2>
+                <form id="url-form">
+                    <textarea id="url-input" placeholder="Enter Depop URLs (one per line)" rows="3"></textarea>
+                    <button type="submit">Add URLs</button>
+                </form>
+                <div id="urls-list"></div>
+            </section>
+
+            <!-- Control Section -->
+            <section class="card">
+                <h2>🎮 Control</h2>
+                <div class="controls">
+                    <button id="start-btn" class="btn-start">Start Bot</button>
+                    <button id="stop-btn" class="btn-stop" disabled>Stop Bot</button>
+                </div>
+                <div id="logs" class="logs"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
